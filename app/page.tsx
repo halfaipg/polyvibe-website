@@ -1,7 +1,7 @@
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
-import LightRays from './components/LightRays'
+import Beams from './components/Beams'
 
 export default function Home() {
   return (
@@ -37,17 +37,16 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32 overflow-hidden" style={{ minHeight: '600px' }}>
-        <div className="absolute inset-0">
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#8247E5"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
+        <div className="absolute inset-0 opacity-20 dark:opacity-15">
+          <Beams
+            beamWidth={2}
+            beamHeight={15}
+            beamNumber={12}
+            lightColor="#8247E5"
+            speed={2}
+            noiseIntensity={1.75}
+            scale={0.2}
+            rotation={0}
           />
         </div>
         <div className="max-w-3xl relative z-10">
