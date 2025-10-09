@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'PolyVibe - Build dApps Like a Pro',
-  description: 'Create dApps, websites, and tokens on Polygon. Marketplace for MCP servers. Stop gambling, start building.',
+  description: 'AI-powered vibe coding platform for Polygon. Create dApps with natural language, launch tokens, and access MCP servers. Stop gambling, start building.',
   icons: {
     icon: '/favicon.svg',
   },

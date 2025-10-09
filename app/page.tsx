@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Create your own dApps, websites, and front ends with our intuitive vibe coding platform. No blockchain expertise required.
+              Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
             </p>
           </div>
 
@@ -90,6 +90,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What is Vibe Coding */}
+      <section className="max-w-6xl mx-auto px-6 py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-black dark:text-white mb-8">What is Vibe Coding?</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            Vibe coding is an emerging development practice that uses AI to generate functional code from natural language prompts. Instead of writing code line-by-line, you describe what you want to build, and AI handles the implementation.
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            This approach accelerates development and makes blockchain app creation accessible to everyone—whether you're an experienced developer or just getting started. Focus on your vision, not syntax.
+          </p>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-32">
@@ -100,7 +113,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Create</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Use PolyVibe to build your dApp, website, or front end with our vibe coding interface.
+                  Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
                 </p>
               </div>
             </div>
