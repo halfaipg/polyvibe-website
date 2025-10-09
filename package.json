@@ -14,7 +14,6 @@
   "dependencies": {
     "bip32": "^5.0.0",
     "bs58check": "^4.0.0",
-    "framer-motion": "^12.23.22",
     "lucide-react": "^0.294.0",
     "next": "^14.0.4",
     "react": "^18.2.0",
