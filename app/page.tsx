@@ -36,8 +36,20 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32">
-        <LightRays />
+      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32 overflow-hidden" style={{ minHeight: '600px' }}>
+        <div className="absolute inset-0">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#8247E5"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+          />
+        </div>
         <div className="max-w-3xl relative z-10">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
             Build dApps<br />Like a Pro
