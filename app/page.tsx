@@ -24,7 +24,7 @@ export default function Home() {
               height={40}
               className="hidden dark:block"
             />
-            <span className="text-2xl font-bold text-black dark:text-white">PolyVibe</span>
+            <span className="hidden md:inline text-2xl font-bold text-black dark:text-white">PolyVibe</span>
           </div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -173,7 +173,7 @@ export default function Home() {
                 height={28}
                 className="hidden dark:block"
               />
-              <span className="text-xl font-bold text-black dark:text-white">PolyVibe</span>
+              <span className="hidden md:inline text-xl font-bold text-black dark:text-white">PolyVibe</span>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-gray-600 dark:text-gray-400">
               <div>Built on Polygon</div>
