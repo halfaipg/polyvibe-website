@@ -1,6 +1,7 @@
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
+import LightRays from './components/LightRays'
 
 export default function Home() {
   return (
@@ -35,8 +36,9 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-32">
-        <div className="max-w-3xl">
+      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32">
+        <LightRays />
+        <div className="max-w-3xl relative z-10">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
             Build dApps<br />Like a Pro
           </h1>
