@@ -1,6 +1,7 @@
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
+import DecryptedText from './components/DecryptedText'
 
 export default function Home() {
   return (
@@ -38,7 +39,8 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-32">
         <div className="max-w-3xl">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-            Build dApps<br />Like a Pro
+            <DecryptedText text="Build dApps" /><br />
+            <DecryptedText text="Like a Pro" />
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
             Tired of gambling on stupid events? Bet on yourself and build the future.<br />
