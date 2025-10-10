@@ -16,7 +16,7 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
         {/* Background Orb - Light Mode */}
         <div className="fixed inset-0 opacity-30 pointer-events-none dark:hidden flex items-center justify-center">
-          <div className="w-[1600px] h-[1600px]">
+          <div className="w-[2000px] h-[2000px]">
             <Orb
               hue={0}
               hoverIntensity={0.5}
