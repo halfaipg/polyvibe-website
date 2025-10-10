@@ -109,7 +109,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Launch your own tokens instantly with zero coding required. Monetize your apps and websites with custom tokens on Polygon. Set up tokenomics, manage supply, and deploy directly to mainnet—all through our intuitive interface.
+              Launch your own tokens instantly with zero coding required. Monetize your apps and websites with custom tokens on Polygon. Set up tokenomics and deploy directly to mainnet.
             </p>
           </div>
 
