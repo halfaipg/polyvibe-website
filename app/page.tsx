@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
         {/* Background Beams - Light Mode (White with Black Accents) */}
-        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
+        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden" suppressHydrationWarning>
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         
         {/* Background Beams - Dark Mode (White/Grey) */}
-        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
+        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block" suppressHydrationWarning>
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -45,8 +45,8 @@ export default function Home() {
         <div className="relative z-10" suppressHydrationWarning>
         {/* Header */}
         <header className="" suppressHydrationWarning>
-        <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center" suppressHydrationWarning>
+          <div className="flex items-center gap-3" suppressHydrationWarning>
             <Image 
               src="/images/polyvibe-logo-black.svg" 
               alt="PolyVibe" 
@@ -89,8 +89,8 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-6xl mx-auto px-6 pb-32">
-        <div className="grid md:grid-cols-3 gap-12">
+      <section className="max-w-6xl mx-auto px-6 pb-32" suppressHydrationWarning>
+        <div className="grid md:grid-cols-3 gap-12" suppressHydrationWarning>
           {/* Feature 1 */}
           <div>
             <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
@@ -140,9 +140,9 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50" suppressHydrationWarning>
+        <div className="max-w-6xl mx-auto px-6" suppressHydrationWarning>
+          <div className="grid md:grid-cols-3 gap-8" suppressHydrationWarning>
             <PixelCard variant="blue">
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
@@ -189,9 +189,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
+      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg" suppressHydrationWarning>
+        <div className="max-w-6xl mx-auto px-6 py-12" suppressHydrationWarning>
+          <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400" suppressHydrationWarning>
             <div className="flex items-center gap-6">
               <span>Built on Polygon</span>
               <span className="text-gray-300 dark:text-gray-700">•</span>
@@ -215,8 +215,8 @@ export default function Home() {
       </footer>
 
       {/* Technology Logos */}
-      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg">
-        <div className="text-black dark:text-white">
+      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg" suppressHydrationWarning>
+        <div className="text-black dark:text-white" suppressHydrationWarning>
           <LogoLoop
             logos={[
               { node: <SiReact />, title: "React", href: "https://react.dev" },
