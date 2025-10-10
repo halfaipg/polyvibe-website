@@ -145,42 +145,32 @@ export default function Home() {
       {/* How It Works */}
       <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 py-32">
-          <h2 className="text-4xl font-bold text-black dark:text-white mb-16">How It Works</h2>
           <ClientOnly>
-            <div className="space-y-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <PixelCard variant="blue">
-                <div className="flex gap-6 p-8">
-                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">01</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Create</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
-                    </p>
-                  </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
+                  </p>
                 </div>
               </PixelCard>
               
               <PixelCard variant="yellow" gap={10} speed={25}>
-                <div className="flex gap-6 p-8">
-                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">02</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Tokenize</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Launch your own token through our factory to monetize and grow your project.
-                    </p>
-                  </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Launch your own token through our factory to monetize and grow your project.
+                  </p>
                 </div>
               </PixelCard>
               
               <PixelCard variant="pink" gap={10} speed={25}>
-                <div className="flex gap-6 p-8">
-                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">03</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Scale</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Access MCP servers from our marketplace to supercharge your development capabilities.
-                    </p>
-                  </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Access MCP servers from our marketplace to supercharge your development capabilities.
+                  </p>
                 </div>
               </PixelCard>
             </div>
