@@ -5,6 +5,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
+import PixelCard from './components/PixelCard'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
@@ -92,37 +93,43 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 pb-32">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Feature 1 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-              <Code2 className="w-6 h-6 text-white dark:text-black" />
+          <PixelCard variant="blue">
+            <div className="relative p-8">
+              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                <Code2 className="w-6 h-6 text-white dark:text-black" />
+              </div>
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
-            </p>
-          </div>
+          </PixelCard>
 
           {/* Feature 2 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-              <Coins className="w-6 h-6 text-white dark:text-black" />
+          <PixelCard variant="yellow">
+            <div className="relative p-8">
+              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                <Coins className="w-6 h-6 text-white dark:text-black" />
+              </div>
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
-            </p>
-          </div>
+          </PixelCard>
 
           {/* Feature 3 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-              <Server className="w-6 h-6 text-white dark:text-black" />
+          <PixelCard variant="pink">
+            <div className="relative p-8">
+              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                <Server className="w-6 h-6 text-white dark:text-black" />
+              </div>
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
-            </p>
-          </div>
+          </PixelCard>
         </div>
       </section>
 
