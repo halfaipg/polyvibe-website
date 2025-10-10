@@ -37,12 +37,12 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32 overflow-hidden" style={{ minHeight: '600px' }}>
-        <div className="absolute inset-0 opacity-10 dark:opacity-5">
+        <div className="absolute inset-0 opacity-30 dark:opacity-20">
           <Beams
             beamWidth={2}
             beamHeight={15}
             beamNumber={12}
-            lightColor="#8247E5"
+            lightColor="#ffffff"
             speed={2}
             noiseIntensity={1.75}
             scale={0.2}
