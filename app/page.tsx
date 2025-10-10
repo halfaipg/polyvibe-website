@@ -1,7 +1,11 @@
+'use client'
+
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
-import Beams from './components/Beams'
+
+const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 
 export default function Home() {
   return (
