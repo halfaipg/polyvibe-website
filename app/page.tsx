@@ -4,12 +4,13 @@ import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import ClientOnly from './components/ClientOnly'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 import dynamic from 'next/dynamic'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
+
+export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (
@@ -141,40 +142,38 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <ClientOnly>
-        <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              <PixelCard variant="blue">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
-                  </p>
-                </div>
-              </PixelCard>
-              
-              <PixelCard variant="yellow">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Launch your own token through our factory to monetize and grow your project.
-                  </p>
-                </div>
-              </PixelCard>
-              
-              <PixelCard variant="pink">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Access MCP servers from our marketplace to supercharge your development capabilities.
-                  </p>
-                </div>
-              </PixelCard>
-            </div>
+      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <PixelCard variant="blue">
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
+                </p>
+              </div>
+            </PixelCard>
+            
+            <PixelCard variant="yellow">
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Launch your own token through our factory to monetize and grow your project.
+                </p>
+              </div>
+            </PixelCard>
+            
+            <PixelCard variant="pink">
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Access MCP servers from our marketplace to supercharge your development capabilities.
+                </p>
+              </div>
+            </PixelCard>
           </div>
-        </section>
-      </ClientOnly>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="max-w-6xl mx-auto px-6 py-32">
