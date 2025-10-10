@@ -9,7 +9,7 @@ import { degToRad } from 'three/src/math/MathUtils.js';
 
 import './Beams.css';
 
-function extendMaterial(BaseMaterial, cfg) {
+function extendMaterial(BaseMaterial: any, cfg: any) {
   const physical = THREE.ShaderLib.physical;
   const { vertexShader: baseVert, fragmentShader: baseFrag, uniforms: baseUniforms } = physical;
   const baseDefines = physical.defines ?? {};
@@ -50,13 +50,13 @@ function extendMaterial(BaseMaterial, cfg) {
   return mat;
 }
 
-const CanvasWrapper = ({ children }) => (
+const CanvasWrapper = ({ children }: any) => (
   <Canvas dpr={[1, 2]} frameloop="always" className="beams-container">
     {children}
   </Canvas>
 );
 
-const hexToNormalizedRGB = hex => {
+const hexToNormalizedRGB = (hex: string) => {
   const clean = hex.replace('#', '');
   const r = parseInt(clean.substring(0, 2), 16);
   const g = parseInt(clean.substring(2, 4), 16);
@@ -150,7 +150,7 @@ const Beams = ({
   noiseIntensity = 1.75,
   scale = 0.2,
   rotation = 0
-}) => {
+}: any) => {
   const meshRef = useRef(null);
   const beamMaterial = useMemo(
     () =>
@@ -222,7 +222,7 @@ const Beams = ({
   );
 };
 
-function createStackedPlanesBufferGeometry(n, width, height, spacing, heightSegments) {
+function createStackedPlanesBufferGeometry(n: number, width: number, height: number, spacing: number, heightSegments: number) {
   const geometry = new THREE.BufferGeometry();
   const numVertices = n * (heightSegments + 1) * 2;
   const numFaces = n * heightSegments * 2;
@@ -270,7 +270,7 @@ function createStackedPlanesBufferGeometry(n, width, height, spacing, heightSegm
   return geometry;
 }
 
-const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
+const MergedPlanes = forwardRef(({ material, width, count, height }: any, ref: any) => {
   const mesh = useRef(null);
   useImperativeHandle(ref, () => mesh.current);
   const geometry = useMemo(
@@ -284,12 +284,12 @@ const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
 });
 MergedPlanes.displayName = 'MergedPlanes';
 
-const PlaneNoise = forwardRef((props, ref) => (
+const PlaneNoise = forwardRef((props: any, ref: any) => (
   <MergedPlanes ref={ref} material={props.material} width={props.width} count={props.count} height={props.height} />
 ));
 PlaneNoise.displayName = 'PlaneNoise';
 
-const DirLight = ({ position, color }) => {
+const DirLight = ({ position, color }: any) => {
   const dir = useRef(null);
   useEffect(() => {
     if (!dir.current) return;
