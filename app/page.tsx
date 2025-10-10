@@ -44,7 +44,7 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
-        <header className="border-b border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-gray-950/60 backdrop-blur-md">
+        <header className="border-b border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image 
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50/60 dark:bg-gray-900/60 backdrop-blur-md border-y border-gray-200/50 dark:border-gray-800/50">
+      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 py-32">
           <h2 className="text-4xl font-bold text-black dark:text-white mb-16">How It Works</h2>
           <div className="space-y-12">
@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-gray-950/60 backdrop-blur-md">
+      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-6">
@@ -217,7 +217,7 @@ export default function Home() {
       </footer>
 
       {/* Technology Logos */}
-      <section className="py-8 bg-gray-50/60 dark:bg-gray-900/60 backdrop-blur-md">
+      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg">
         <div className="text-black dark:text-white">
           <LogoLoop
             logos={[
