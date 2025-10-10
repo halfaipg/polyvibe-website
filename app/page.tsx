@@ -14,7 +14,7 @@ const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false }
 export default function Home() {
   return (
     <ClientOnly>
-      <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
+      <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
         {/* Background Beams - Light Mode (White with Black Accents) */}
         <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
           <Beams
@@ -44,9 +44,9 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10" suppressHydrationWarning>
         {/* Header */}
-        <header className="">
+        <header className="" suppressHydrationWarning>
         <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image 
@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* How It Works */}
       <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
-        <div className="max-w-6xl mx-auto px-6 py-32">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <PixelCard variant="blue">
               <div className="p-8">
@@ -154,7 +154,7 @@ export default function Home() {
               </div>
             </PixelCard>
             
-            <PixelCard variant="yellow" gap={10} speed={25}>
+            <PixelCard variant="yellow">
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -163,7 +163,7 @@ export default function Home() {
               </div>
             </PixelCard>
             
-            <PixelCard variant="pink" gap={10} speed={25}>
+            <PixelCard variant="pink">
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
