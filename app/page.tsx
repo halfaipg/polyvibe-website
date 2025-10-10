@@ -2,6 +2,7 @@
 
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
@@ -11,10 +12,24 @@ const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-gray-400">Loading...</div>
+      </main>
+    )
+  }
+
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
+    <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
         {/* Background Beams - Light Mode (White with Black Accents) */}
-        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden" suppressHydrationWarning>
+        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -28,7 +43,7 @@ export default function Home() {
         </div>
         
         {/* Background Beams - Dark Mode (White/Grey) */}
-        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block" suppressHydrationWarning>
+        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -42,11 +57,11 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10" suppressHydrationWarning>
+        <div className="relative z-10">
         {/* Header */}
-        <header className="" suppressHydrationWarning>
-        <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center" suppressHydrationWarning>
-          <div className="flex items-center gap-3" suppressHydrationWarning>
+        <header className="">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+          <div className="flex items-center gap-3">
             <Image 
               src="/images/polyvibe-logo-black.svg" 
               alt="PolyVibe" 
@@ -89,8 +104,8 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-6xl mx-auto px-6 pb-32" suppressHydrationWarning>
-        <div className="grid md:grid-cols-3 gap-12" suppressHydrationWarning>
+      <section className="max-w-6xl mx-auto px-6 pb-32">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Feature 1 */}
           <div>
             <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
@@ -189,9 +204,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg" suppressHydrationWarning>
-        <div className="max-w-6xl mx-auto px-6 py-12" suppressHydrationWarning>
-          <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400" suppressHydrationWarning>
+      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-6">
               <span>Built on Polygon</span>
               <span className="text-gray-300 dark:text-gray-700">•</span>
@@ -215,8 +230,8 @@ export default function Home() {
       </footer>
 
       {/* Technology Logos */}
-      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg" suppressHydrationWarning>
-        <div className="text-black dark:text-white" suppressHydrationWarning>
+      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg">
+        <div className="text-black dark:text-white">
           <LogoLoop
             logos={[
               { node: <SiReact />, title: "React", href: "https://react.dev" },
