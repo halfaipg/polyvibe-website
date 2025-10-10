@@ -1,10 +1,17 @@
 .pixel-card {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   cursor: pointer;
   outline: 2px solid transparent;
   transition: outline-color 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.dark .pixel-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .pixel-card:focus-visible {
