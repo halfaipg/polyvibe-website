@@ -3,26 +3,14 @@
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { useState, useEffect } from 'react'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
-const Aurora = dynamic(() => import('./components/Aurora'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
-
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
       {/* Background Beams - Light Mode (White with Black Accents) */}
