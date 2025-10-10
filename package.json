@@ -12,15 +12,15 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.6",
-    "@react-three/fiber": "^9.3.0",
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.12",
     "bip32": "^5.0.0",
     "bs58check": "^4.0.0",
     "lucide-react": "^0.294.0",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.180.0",
+    "three": "^0.159.0",
     "tiny-secp256k1": "^2.2.4"
   },
   "devDependencies": {
