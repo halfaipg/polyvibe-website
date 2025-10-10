@@ -5,7 +5,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 
@@ -175,31 +175,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partner Logos */}
-      <section className="border-t border-gray-200 dark:border-gray-800 py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 mb-8 uppercase tracking-wider">
-            Built With
-          </h3>
-          <LogoLoop
-            logos={[
-              { node: <SiReact />, title: "React", href: "https://react.dev" },
-              { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-              { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-              { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-            ]}
-            speed={120}
-            direction="left"
-            logoHeight={48}
-            gap={40}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            ariaLabel="Technology stack"
-          />
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-12">
@@ -241,6 +216,33 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Technology Logos */}
+      <section className="py-8 bg-gray-50 dark:bg-gray-900">
+        <div className="text-black dark:text-white">
+          <LogoLoop
+            logos={[
+              { node: <SiReact />, title: "React", href: "https://react.dev" },
+              { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+              { node: <SiTypescript />, title: "TypeScript", href: "https://typescriptlang.org" },
+              { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+              { node: <SiPolygon />, title: "Polygon", href: "https://polygon.technology" },
+              { node: <SiEthereum />, title: "Ethereum", href: "https://ethereum.org" },
+              { node: <SiSolidity />, title: "Solidity", href: "https://soliditylang.org" },
+              { node: <SiOpenai />, title: "OpenAI", href: "https://openai.com" },
+            ]}
+            speed={100}
+            direction="left"
+            logoHeight={32}
+            gap={48}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#f9fafb"
+            ariaLabel="Technology stack"
+          />
+        </div>
+      </section>
       </div>
     </main>
   )
