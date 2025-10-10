@@ -231,14 +231,13 @@ export default function Home() {
               { node: <SiSolidity />, title: "Solidity", href: "https://soliditylang.org" },
               { node: <SiOpenai />, title: "OpenAI", href: "https://openai.com" },
             ]}
-            speed={100}
+            speed={60}
             direction="left"
             logoHeight={32}
             gap={48}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            fadeOutColor="#f9fafb"
+            pauseOnHover={false}
+            scaleOnHover={false}
+            fadeOut={false}
             ariaLabel="Technology stack"
           />
         </div>

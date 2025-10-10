@@ -46,41 +46,32 @@ export default function LogoLoop({
     const list = track.querySelector('.logoloop__list') as HTMLElement
     if (!list) return
 
-    // Clone the list for seamless loop
-    const clone = list.cloneNode(true) as HTMLElement
-    track.appendChild(clone)
+    // Clone the list multiple times for seamless loop
+    const clone1 = list.cloneNode(true) as HTMLElement
+    const clone2 = list.cloneNode(true) as HTMLElement
+    track.appendChild(clone1)
+    track.appendChild(clone2)
 
     const listWidth = list.offsetWidth
-    const duration = listWidth / speed
-
-    let startTime: number | null = null
-    let animationFrameId: number
     let currentPosition = 0
 
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp
-      const elapsed = timestamp - startTime
-
+    const animate = () => {
       if (!isPaused) {
-        const distance = (elapsed / 1000) * speed
-        currentPosition = direction === 'left' ? -distance : distance
+        const pixelsPerFrame = speed / 60
+        currentPosition -= pixelsPerFrame
 
         // Reset position for seamless loop
-        if (direction === 'left' && Math.abs(currentPosition) >= listWidth) {
-          currentPosition = currentPosition + listWidth
-          startTime = timestamp
-        } else if (direction === 'right' && currentPosition >= listWidth) {
-          currentPosition = currentPosition - listWidth
-          startTime = timestamp
+        if (Math.abs(currentPosition) >= listWidth) {
+          currentPosition = 0
         }
 
         track.style.transform = `translate3d(${currentPosition}px, 0, 0)`
       }
 
-      animationFrameId = requestAnimationFrame(animate)
+      requestAnimationFrame(animate)
     }
 
-    animationFrameId = requestAnimationFrame(animate)
+    const animationFrameId = requestAnimationFrame(animate)
 
     return () => {
       if (animationFrameId) {
