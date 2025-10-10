@@ -178,26 +178,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Image 
-                src="/images/polyvibe-logo-black.svg" 
-                alt="PolyVibe" 
-                width={28} 
-                height={28}
-                className="dark:hidden"
-              />
-              <Image 
-                src="/images/polyvibe-logo-white.svg" 
-                alt="PolyVibe" 
-                width={28} 
-                height={28}
-                className="hidden dark:block"
-              />
-              <span className="hidden md:inline text-xl font-bold text-black dark:text-white">PolyVibe</span>
-            </div>
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-gray-600 dark:text-gray-400">
-              <div>Built on Polygon</div>
+          <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-6">
+              <span>Built on Polygon</span>
+              <span className="text-gray-300 dark:text-gray-700">•</span>
               <a 
                 href="https://aipowergrid.io" 
                 target="_blank" 
