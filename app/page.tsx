@@ -4,7 +4,7 @@ import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity, SiVercel, SiCloudflare, SiNodedotjs, SiJavascript, SiGit, SiGithub } from 'react-icons/si'
 import dynamic from 'next/dynamic'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
@@ -221,11 +221,17 @@ export default function Home() {
               { node: <SiReact />, title: "React", href: "https://react.dev" },
               { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
               { node: <SiTypescript />, title: "TypeScript", href: "https://typescriptlang.org" },
+              { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
               { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+              { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+              { node: <SiVercel />, title: "Vercel", href: "https://vercel.com" },
+              { node: <SiCloudflare />, title: "Cloudflare", href: "https://cloudflare.com" },
               { node: <SiPolygon />, title: "Polygon", href: "https://polygon.technology" },
               { node: <SiEthereum />, title: "Ethereum", href: "https://ethereum.org" },
               { node: <SiSolidity />, title: "Solidity", href: "https://soliditylang.org" },
               { node: <SiOpenai />, title: "OpenAI", href: "https://openai.com" },
+              { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+              { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
             ]}
             speed={60}
             direction="left"
