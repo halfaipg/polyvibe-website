@@ -10,16 +10,30 @@ const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-      {/* Background Beams - Covers Entire Page */}
-      <div className="fixed inset-0 opacity-40 dark:opacity-25 pointer-events-none">
+      {/* Background Beams - Light Mode (Black) */}
+      <div className="fixed inset-0 opacity-20 pointer-events-none dark:hidden">
         <Beams
-          beamWidth={3}
-          beamHeight={20}
-          beamNumber={18}
-          lightColor="#8247E5"
+          beamWidth={1.5}
+          beamHeight={15}
+          beamNumber={24}
+          lightColor="#000000"
           speed={1.5}
-          noiseIntensity={2}
-          scale={0.3}
+          noiseIntensity={1.5}
+          scale={0.25}
+          rotation={25}
+        />
+      </div>
+      
+      {/* Background Beams - Dark Mode (Grey) */}
+      <div className="fixed inset-0 opacity-15 pointer-events-none hidden dark:block">
+        <Beams
+          beamWidth={1.5}
+          beamHeight={15}
+          beamNumber={24}
+          lightColor="#ffffff"
+          speed={1.5}
+          noiseIntensity={1.5}
+          scale={0.25}
           rotation={25}
         />
       </div>
