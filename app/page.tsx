@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
       {/* Background Aurora - Light Mode Only */}
-      <div className="fixed inset-0 opacity-40 pointer-events-none dark:hidden">
+      <div className="fixed inset-0 opacity-60 pointer-events-none dark:hidden">
         <Aurora
-          colorStops={["#8247E5", "#E8B4FA", "#8247E5"]}
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
           blend={0.5}
           amplitude={1.0}
           speed={0.5}
