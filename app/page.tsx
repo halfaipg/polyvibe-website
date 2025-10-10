@@ -12,9 +12,9 @@ const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
+    <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
         {/* Background Beams - Light Mode (White with Black Accents) */}
-        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden" suppressHydrationWarning>
+        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         
         {/* Background Beams - Dark Mode (White/Grey) */}
-        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block" suppressHydrationWarning>
+        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
           <Beams
             beamWidth={1.5}
             beamHeight={15}
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10" suppressHydrationWarning>
+        <div className="relative z-10">
         {/* Header */}
         <header className="">
         <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50" suppressHydrationWarning>
+      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <PixelCard variant="blue">
@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg" suppressHydrationWarning>
+      <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-6">
@@ -215,7 +215,7 @@ export default function Home() {
       </footer>
 
       {/* Technology Logos */}
-      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg" suppressHydrationWarning>
+      <section className="py-8 bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg">
         <div className="text-black dark:text-white">
           <LogoLoop
             logos={[
