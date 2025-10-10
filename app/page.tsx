@@ -2,10 +2,11 @@
 
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
+import ClientOnly from './components/ClientOnly'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
+import dynamic from 'next/dynamic'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
@@ -13,33 +14,35 @@ const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false }
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-      {/* Background Beams - Light Mode (White with Black Accents) */}
-      <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
-        <Beams
-          beamWidth={1.5}
-          beamHeight={15}
-          beamNumber={24}
-          lightColor="#f0f0f0"
-          speed={1.5}
-          noiseIntensity={1.5}
-          scale={0.25}
-          rotation={25}
-        />
-      </div>
-      
-      {/* Background Beams - Dark Mode (White/Grey) */}
-      <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
-        <Beams
-          beamWidth={1.5}
-          beamHeight={15}
-          beamNumber={24}
-          lightColor="#ffffff"
-          speed={1.5}
-          noiseIntensity={1.5}
-          scale={0.25}
-          rotation={25}
-        />
-      </div>
+      <ClientOnly>
+        {/* Background Beams - Light Mode (White with Black Accents) */}
+        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
+          <Beams
+            beamWidth={1.5}
+            beamHeight={15}
+            beamNumber={24}
+            lightColor="#f0f0f0"
+            speed={1.5}
+            noiseIntensity={1.5}
+            scale={0.25}
+            rotation={25}
+          />
+        </div>
+        
+        {/* Background Beams - Dark Mode (White/Grey) */}
+        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
+          <Beams
+            beamWidth={1.5}
+            beamHeight={15}
+            beamNumber={24}
+            lightColor="#ffffff"
+            speed={1.5}
+            noiseIntensity={1.5}
+            scale={0.25}
+            rotation={25}
+          />
+        </div>
+      </ClientOnly>
 
       {/* Content */}
       <div className="relative z-10">
@@ -90,46 +93,48 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="max-w-6xl mx-auto px-6 pb-32">
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Feature 1 */}
-          <PixelCard variant="blue">
-            <div className="relative p-8">
-              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                <Code2 className="w-6 h-6 text-white dark:text-black" />
+        <ClientOnly>
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Feature 1 */}
+            <PixelCard variant="blue">
+              <div className="relative p-8">
+                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                  <Code2 className="w-6 h-6 text-white dark:text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
-              </p>
-            </div>
-          </PixelCard>
+            </PixelCard>
 
-          {/* Feature 2 */}
-          <PixelCard variant="yellow">
-            <div className="relative p-8">
-              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                <Coins className="w-6 h-6 text-white dark:text-black" />
+            {/* Feature 2 */}
+            <PixelCard variant="yellow">
+              <div className="relative p-8">
+                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                  <Coins className="w-6 h-6 text-white dark:text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
-              </p>
-            </div>
-          </PixelCard>
+            </PixelCard>
 
-          {/* Feature 3 */}
-          <PixelCard variant="pink">
-            <div className="relative p-8">
-              <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                <Server className="w-6 h-6 text-white dark:text-black" />
+            {/* Feature 3 */}
+            <PixelCard variant="pink">
+              <div className="relative p-8">
+                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+                  <Server className="w-6 h-6 text-white dark:text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
-              </p>
-            </div>
-          </PixelCard>
-        </div>
+            </PixelCard>
+          </div>
+        </ClientOnly>
       </section>
 
       {/* What is Vibe Coding */}
