@@ -20,8 +20,8 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-gray-400">Loading...</div>
+      <main className="min-h-screen bg-white flex items-center justify-center" suppressHydrationWarning>
+        <div className="text-gray-400" suppressHydrationWarning>Loading...</div>
       </main>
     )
   }
