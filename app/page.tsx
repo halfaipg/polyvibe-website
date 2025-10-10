@@ -25,12 +25,12 @@ export default function Home() {
       </div>
       
       {/* Background Beams - Dark Mode (Grey) */}
-      <div className="fixed inset-0 opacity-15 pointer-events-none hidden dark:block">
+      <div className="fixed inset-0 opacity-25 pointer-events-none hidden dark:block">
         <Beams
           beamWidth={1.5}
           beamHeight={15}
           beamNumber={24}
-          lightColor="#ffffff"
+          lightColor="#666666"
           speed={1.5}
           noiseIntensity={1.5}
           scale={0.25}
