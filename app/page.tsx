@@ -5,11 +5,11 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import PixelCard from './components/PixelCard'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const Aurora = dynamic(() => import('./components/Aurora'), { ssr: false })
+const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
 
 export default function Home() {
   return (
