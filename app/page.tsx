@@ -78,7 +78,7 @@ export default function Home() {
             Build dApps<br />Like a Pro
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-            Tired of gambling on stupid events? Bet on yourself and build the future.<br />
+            Stop gambling on randomness. Bet on yourself instead and build the future.<br />
             Create dApps, websites, and tokens on Polygon without the complexity.
           </p>
           <button className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg">
