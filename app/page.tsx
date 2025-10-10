@@ -4,7 +4,7 @@ import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity, SiVercel, SiCloudflare, SiNodedotjs, SiJavascript, SiGit, SiGithub } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity, SiVercel, SiCloudflare, SiNodedotjs, SiGit, SiGithub } from 'react-icons/si'
 import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 
@@ -215,24 +215,22 @@ export default function Home() {
       <footer className="border-t border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400">
-            <div className="flex items-center gap-6">
+            <a 
+              href="https://aipowergrid.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-black dark:hover:text-white transition-colors"
+            >
               <span>Built on Polygon</span>
-              <span className="text-gray-300 dark:text-gray-700">•</span>
-              <a 
-                href="https://aipowergrid.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-black dark:hover:text-white transition-colors"
-              >
-                <Image 
-                  src="/images/aipg-logo.webp" 
-                  alt="AIPG" 
-                  width={24} 
-                  height={24}
-                />
-                <span>Powered by the Grid</span>
-              </a>
-            </div>
+              <SiPolygon className="w-4 h-4" />
+              <span>Powered by the Grid</span>
+              <Image 
+                src="/images/aipg-logo.webp" 
+                alt="AIPG" 
+                width={20} 
+                height={20}
+              />
+            </a>
           </div>
         </div>
       </footer>
@@ -245,7 +243,6 @@ export default function Home() {
               { node: <SiReact />, title: "React", href: "https://react.dev" },
               { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
               { node: <SiTypescript />, title: "TypeScript", href: "https://typescriptlang.org" },
-              { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
               { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
               { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
               { node: <SiVercel />, title: "Vercel", href: "https://vercel.com" },
