@@ -10,8 +10,6 @@ import dynamic from 'next/dynamic'
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
 
-export const dynamic = 'force-dynamic'
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
