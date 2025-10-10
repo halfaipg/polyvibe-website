@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx @opennextjs/cloudflare@latest build",
     "start": "next start",
     "lint": "next lint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
@@ -26,7 +26,7 @@
     "tiny-secp256k1": "^2.2.4"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.9.2",
+    "@opennextjs/cloudflare": "^1.10.0",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
