@@ -9,22 +9,21 @@ import dynamic from 'next/dynamic'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
+const Orb = dynamic(() => import('./components/Orb'), { ssr: false })
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-        {/* Background Beams - Light Mode (White with Black Accents) */}
-        <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
-          <Beams
-            beamWidth={1.5}
-            beamHeight={15}
-            beamNumber={24}
-            lightColor="#f0f0f0"
-            speed={1.5}
-            noiseIntensity={1.5}
-            scale={0.25}
-            rotation={25}
-          />
+        {/* Background Orb - Light Mode */}
+        <div className="fixed inset-0 opacity-30 pointer-events-none dark:hidden flex items-center justify-center">
+          <div className="w-[800px] h-[800px]">
+            <Orb
+              hue={0}
+              hoverIntensity={0.5}
+              rotateOnHover={true}
+              forceHoverState={false}
+            />
+          </div>
         </div>
         
         {/* Background Beams - Dark Mode (White/Grey) */}
