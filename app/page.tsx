@@ -96,7 +96,7 @@ export default function Home() {
               className="dark:hidden"
             />
             <Image 
-              src="/images/polyvibe-logo-white.svg" 
+              src="/images/pv-logo-white.svg" 
               alt="PolyVibe" 
               width={40} 
               height={40}
