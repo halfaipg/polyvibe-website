@@ -29,7 +29,7 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
-        <header className="border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
+        <header className="border-b border-gray-200/50 dark:border-gray-800/50 bg-white/60 dark:bg-gray-950/60 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image 
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+      <section className="bg-gray-50/60 dark:bg-gray-900/60 backdrop-blur-md border-y border-gray-200/50 dark:border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 py-32">
           <h2 className="text-4xl font-bold text-black dark:text-white mb-16">How It Works</h2>
           <div className="space-y-12">
