@@ -8,10 +8,21 @@ import LogoLoop from './components/LogoLoop'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
+const Aurora = dynamic(() => import('./components/Aurora'), { ssr: false })
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
+      {/* Background Aurora - Light Mode Only */}
+      <div className="fixed inset-0 opacity-40 pointer-events-none dark:hidden">
+        <Aurora
+          colorStops={["#8247E5", "#E8B4FA", "#8247E5"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+      
       {/* Background Beams - Dark Mode Only */}
       <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
         <Beams
