@@ -140,9 +140,9 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50" suppressHydrationWarning>
+        <div className="max-w-6xl mx-auto px-6" suppressHydrationWarning>
+          <div className="grid md:grid-cols-3 gap-8" suppressHydrationWarning>
             <PixelCard variant="blue">
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
