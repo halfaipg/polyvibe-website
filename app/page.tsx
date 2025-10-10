@@ -1,7 +1,6 @@
 import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
-import Beams from './components/Beams'
 
 export default function Home() {
   return (
@@ -36,20 +35,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32 overflow-hidden" style={{ minHeight: '600px' }}>
-        <div className="absolute inset-0 opacity-20 dark:opacity-15">
-          <Beams
-            beamWidth={2}
-            beamHeight={15}
-            beamNumber={12}
-            lightColor="#8247E5"
-            speed={2}
-            noiseIntensity={1.75}
-            scale={0.2}
-            rotation={0}
-          />
-        </div>
-        <div className="max-w-3xl relative z-10">
+      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-32">
+        <div className="max-w-3xl">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
             Build dApps<br />Like a Pro
           </h1>
