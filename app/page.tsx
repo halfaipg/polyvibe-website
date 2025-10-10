@@ -6,39 +6,63 @@ import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity, SiVercel, SiCloudflare, SiNodedotjs, SiJavascript, SiGit, SiGithub } from 'react-icons/si'
 import dynamic from 'next/dynamic'
+import { useState, useEffect } from 'react'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
 const Orb = dynamic(() => import('./components/Orb'), { ssr: false })
 
 export default function Home() {
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'))
+    }
+    
+    checkTheme()
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+    
+    return () => observer.disconnect()
+  }, [])
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
         {/* Background Orb - Light Mode (Horizontal Band) */}
-        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none dark:hidden">
-          <div className="w-[3000px] h-[1200px]">
-            <Orb
-              hue={0}
-              hoverIntensity={0.5}
-              rotateOnHover={true}
-              forceHoverState={false}
-            />
+        {!isDark && (
+          <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none">
+            <div className="w-[3000px] h-[1200px]">
+              <Orb
+                hue={0}
+                hoverIntensity={0.5}
+                rotateOnHover={true}
+                forceHoverState={false}
+              />
+            </div>
           </div>
-        </div>
+        )}
         
         {/* Background Beams - Dark Mode (White/Grey) */}
-        <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
-          <Beams
-            beamWidth={1.5}
-            beamHeight={15}
-            beamNumber={24}
-            lightColor="#ffffff"
-            speed={1.5}
-            noiseIntensity={1.5}
-            scale={0.25}
-            rotation={25}
-          />
-        </div>
+        {isDark && (
+          <div className="fixed inset-0 opacity-30 pointer-events-none">
+            <Beams
+              beamWidth={1.5}
+              beamHeight={15}
+              beamNumber={24}
+              lightColor="#ffffff"
+              speed={1.5}
+              noiseIntensity={1.5}
+              scale={0.25}
+              rotation={25}
+            />
+          </div>
+        )}
 
         {/* Content */}
         <div className="relative z-10">
