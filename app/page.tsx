@@ -10,10 +10,11 @@ import { useState, useEffect } from 'react'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
-const Orb = dynamic(() => import('./components/Orb'), { ssr: false })
+const Prism = dynamic(() => import('./components/Prism'), { ssr: false })
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false)
+  const [reactBitsEnabled, setReactBitsEnabled] = useState(true)
 
   useEffect(() => {
     // Check initial theme
@@ -32,19 +33,36 @@ export default function Home() {
     
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    // Load React Bits preference from localStorage
+    const saved = localStorage.getItem('reactBitsEnabled')
+    if (saved !== null) {
+      setReactBitsEnabled(saved === 'true')
+    }
+  }, [])
+
+  const toggleReactBits = () => {
+    const newValue = !reactBitsEnabled
+    setReactBitsEnabled(newValue)
+    localStorage.setItem('reactBitsEnabled', String(newValue))
+  }
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-        {/* Background Orb - Light Mode (Horizontal Band) */}
-        {!isDark && (
-          <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none">
-            <div className="w-[3000px] h-[1200px]">
-              <Orb
-                hue={0}
-                hoverIntensity={0.5}
-                rotateOnHover={true}
-                forceHoverState={false}
-              />
-            </div>
+        {/* Background Prism - Light Mode Only */}
+        {!isDark && reactBitsEnabled && (
+          <div className="fixed inset-0 opacity-30 pointer-events-none">
+            <Prism
+              animationType="rotate"
+              timeScale={0.5}
+              height={3.5}
+              baseWidth={5.5}
+              scale={3.6}
+              hueShift={0}
+              colorFrequency={1}
+              noise={0.5}
+              glow={1}
+            />
           </div>
         )}
         
@@ -102,7 +120,7 @@ export default function Home() {
             Build dApps<br />Like a Pro
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-            Stop gambling on randomness. Bet on yourself instead and build the future.<br />
+            Stop gambling on randomness. Bet on yourself and build the future.<br />
             Create dApps, websites, and tokens on Polygon without the complexity.
           </p>
           <button className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg">
@@ -176,32 +194,59 @@ export default function Home() {
       <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50 py-16" suppressHydrationWarning>
         <div className="max-w-6xl mx-auto px-6" suppressHydrationWarning>
           <div className="grid md:grid-cols-3 gap-8 items-stretch" suppressHydrationWarning>
-            <PixelCard variant="blue" className="h-full">
-              <div className="p-8 text-center h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
-                </p>
-              </div>
-            </PixelCard>
-            
-            <PixelCard variant="yellow" className="h-full">
-              <div className="p-8 text-center h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Launch your own token through our factory to monetize and grow your project.
-                </p>
-              </div>
-            </PixelCard>
-            
-            <PixelCard variant="pink" className="h-full">
-              <div className="p-8 text-center h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Access MCP servers from our marketplace to supercharge your development capabilities.
-                </p>
-              </div>
-            </PixelCard>
+            {reactBitsEnabled ? (
+              <>
+                <PixelCard variant="blue" className="h-full">
+                  <div className="p-8 text-center h-full flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
+                    </p>
+                  </div>
+                </PixelCard>
+                
+                <PixelCard variant="yellow" className="h-full">
+                  <div className="p-8 text-center h-full flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Launch your own token through our factory to monetize and grow your project.
+                    </p>
+                  </div>
+                </PixelCard>
+                
+                <PixelCard variant="pink" className="h-full">
+                  <div className="p-8 text-center h-full flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Access MCP servers from our marketplace to supercharge your development capabilities.
+                    </p>
+                  </div>
+                </PixelCard>
+              </>
+            ) : (
+              <>
+                <div className="p-8 text-center border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
+                  </p>
+                </div>
+                
+                <div className="p-8 text-center border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Launch your own token through our factory to monetize and grow your project.
+                  </p>
+                </div>
+                
+                <div className="p-8 text-center border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Access MCP servers from our marketplace to supercharge your development capabilities.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -239,8 +284,15 @@ export default function Home() {
                 alt="AIPG" 
                 width={20} 
                 height={20}
+                className="-ml-1"
               />
             </a>
+            <button
+              onClick={toggleReactBits}
+              className="text-sm px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              {reactBitsEnabled ? 'Disable' : 'Enable'} React Bits Effects
+            </button>
           </div>
         </div>
       </footer>
