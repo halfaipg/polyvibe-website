@@ -44,7 +44,7 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
-        <header className="border-b border-gray-200/30 dark:border-gray-800/50 bg-white/40 dark:bg-gray-950/60 backdrop-blur-lg">
+        <header className="border-b border-gray-200/30 dark:border-gray-800/50 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image 
