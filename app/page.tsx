@@ -13,17 +13,21 @@ const Aurora = dynamic(() => import('./components/Aurora'), { ssr: false })
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-      {/* Background Aurora - Light Mode Only */}
-      <div className="fixed inset-0 opacity-70 pointer-events-none dark:hidden">
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.3}
-          amplitude={0.6}
-          speed={0.5}
+      {/* Background Beams - Light Mode (White with Black Accents) */}
+      <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
+        <Beams
+          beamWidth={1.5}
+          beamHeight={15}
+          beamNumber={24}
+          lightColor="#f0f0f0"
+          speed={1.5}
+          noiseIntensity={1.5}
+          scale={0.25}
+          rotation={25}
         />
       </div>
       
-      {/* Background Beams - Dark Mode Only */}
+      {/* Background Beams - Dark Mode (White/Grey) */}
       <div className="fixed inset-0 opacity-30 pointer-events-none hidden dark:block">
         <Beams
           beamWidth={1.5}
