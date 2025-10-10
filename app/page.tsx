@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-32">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
             Build dApps<br />Like a Pro
           </h1>
@@ -92,8 +92,8 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 pb-32">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Feature 1 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Code2 className="w-6 h-6 text-white dark:text-black" />
             </div>
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
@@ -103,8 +103,8 @@ export default function Home() {
           </div>
 
           {/* Feature 2 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Coins className="w-6 h-6 text-white dark:text-black" />
             </div>
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
@@ -114,8 +114,8 @@ export default function Home() {
           </div>
 
           {/* Feature 3 */}
-          <div>
-            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Server className="w-6 h-6 text-white dark:text-black" />
             </div>
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
@@ -144,7 +144,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6" suppressHydrationWarning>
           <div className="grid md:grid-cols-3 gap-8" suppressHydrationWarning>
             <PixelCard variant="blue">
-              <div className="p-8">
+              <div className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Create</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
@@ -153,7 +153,7 @@ export default function Home() {
             </PixelCard>
             
             <PixelCard variant="yellow">
-              <div className="p-8">
+              <div className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Tokenize</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Launch your own token through our factory to monetize and grow your project.
@@ -162,7 +162,7 @@ export default function Home() {
             </PixelCard>
             
             <PixelCard variant="pink">
-              <div className="p-8">
+              <div className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Scale</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Access MCP servers from our marketplace to supercharge your development capabilities.
