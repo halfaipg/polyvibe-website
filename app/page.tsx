@@ -90,9 +90,9 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="max-w-6xl mx-auto px-6 pb-32">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {/* Feature 1 */}
-          <div className="text-center">
+          <div className="text-center p-8 border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col">
             <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Code2 className="w-6 h-6 text-white dark:text-black" />
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           {/* Feature 2 */}
-          <div className="text-center">
+          <div className="text-center p-8 border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col">
             <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Coins className="w-6 h-6 text-white dark:text-black" />
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           {/* Feature 3 */}
-          <div className="text-center">
+          <div className="text-center p-8 border border-gray-200 dark:border-gray-800 rounded-lg bg-white/40 dark:bg-gray-950/40 backdrop-blur-sm h-full flex flex-col">
             <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg mx-auto">
               <Server className="w-6 h-6 text-white dark:text-black" />
             </div>
