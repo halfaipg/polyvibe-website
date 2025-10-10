@@ -5,7 +5,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import { SiEthereum, SiSolidity, SiIpfs, SiOpenai } from 'react-icons/si'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 
@@ -183,19 +183,19 @@ export default function Home() {
           </h3>
           <LogoLoop
             logos={[
-              { node: <SiEthereum />, title: "Ethereum", href: "https://ethereum.org" },
-              { node: <SiSolidity />, title: "Solidity", href: "https://soliditylang.org" },
-              { node: <SiIpfs />, title: "IPFS", href: "https://ipfs.tech" },
-              { node: <SiOpenai />, title: "OpenAI", href: "https://openai.com" },
+              { node: <SiReact />, title: "React", href: "https://react.dev" },
+              { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+              { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+              { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
             ]}
-            speed={80}
+            speed={120}
             direction="left"
             logoHeight={48}
-            gap={60}
+            gap={40}
             pauseOnHover
             scaleOnHover
             fadeOut
-            ariaLabel="Technology partners"
+            ariaLabel="Technology stack"
           />
         </div>
       </section>
