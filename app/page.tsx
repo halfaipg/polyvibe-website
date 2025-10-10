@@ -156,9 +156,19 @@ export default function Home() {
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             Vibe coding is an emerging development practice that uses AI to generate functional code from natural language prompts. Instead of writing code line-by-line, you describe what you want to build, and AI handles the implementation.
           </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-12">
             This approach accelerates development and makes blockchain app creation accessible to everyone—whether you're an experienced developer or just getting started. Focus on your vision, not syntax.
           </p>
+          <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+            <video 
+              controls 
+              className="w-full h-full"
+              preload="metadata"
+            >
+              <source src="/videos/vibe-coding.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 
