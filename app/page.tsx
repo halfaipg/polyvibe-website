@@ -4,7 +4,6 @@ import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './components/ThemeToggle'
 import LogoLoop from './components/LogoLoop'
-import ClientOnly from './components/ClientOnly'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiEthereum, SiPolygon, SiOpenai, SiSolidity } from 'react-icons/si'
 import dynamic from 'next/dynamic'
 
@@ -13,8 +12,7 @@ const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false }
 
 export default function Home() {
   return (
-    <ClientOnly>
-      <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
+    <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden" suppressHydrationWarning>
         {/* Background Beams - Light Mode (White with Black Accents) */}
         <div className="fixed inset-0 opacity-15 pointer-events-none dark:hidden">
           <Beams
@@ -243,7 +241,6 @@ export default function Home() {
       </section>
         </div>
       </main>
-    </ClientOnly>
   )
 }
 
