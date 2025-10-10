@@ -160,7 +160,7 @@ export default function Home() {
                 </div>
               </PixelCard>
               
-              <PixelCard variant="yellow">
+              <PixelCard variant="yellow" gap={10} speed={25}>
                 <div className="flex gap-6 p-8">
                   <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">02</div>
                   <div>
@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
               </PixelCard>
               
-              <PixelCard variant="pink">
+              <PixelCard variant="pink" gap={10} speed={25}>
                 <div className="flex gap-6 p-8">
                   <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">03</div>
                   <div>
