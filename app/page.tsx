@@ -4,6 +4,8 @@ import { Code2, Coins, Server } from 'lucide-react'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import ThemeToggle from './components/ThemeToggle'
+import LogoLoop from './components/LogoLoop'
+import { SiEthereum, SiSolidity, SiIpfs, SiOpenai } from 'react-icons/si'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 
@@ -170,6 +172,31 @@ export default function Home() {
           <button className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg">
             Get Started
           </button>
+        </div>
+      </section>
+
+      {/* Partner Logos */}
+      <section className="border-t border-gray-200 dark:border-gray-800 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 mb-8 uppercase tracking-wider">
+            Built With
+          </h3>
+          <LogoLoop
+            logos={[
+              { node: <SiEthereum />, title: "Ethereum", href: "https://ethereum.org" },
+              { node: <SiSolidity />, title: "Solidity", href: "https://soliditylang.org" },
+              { node: <SiIpfs />, title: "IPFS", href: "https://ipfs.tech" },
+              { node: <SiOpenai />, title: "OpenAI", href: "https://openai.com" },
+            ]}
+            speed={80}
+            direction="left"
+            logoHeight={48}
+            gap={60}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            ariaLabel="Technology partners"
+          />
         </div>
       </section>
 
