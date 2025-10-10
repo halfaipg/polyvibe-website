@@ -227,9 +227,9 @@ const Beams = ({
         <PlaneNoise ref={meshRef} material={beamMaterial} count={beamNumber} width={beamWidth} height={beamHeight} />
         <DirLight color={lightColor} position={[0, 3, 10]} />
       </group>
-      <ambientLight intensity={1} />
-      <color attach="background" args={['#000000']} />
-      <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
+      <ambientLight intensity={1.5} />
+      <color attach="background" args={['transparent']} />
+      <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={35} />
     </CanvasWrapper>
   )
 }
