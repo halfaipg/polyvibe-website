@@ -93,48 +93,40 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="max-w-6xl mx-auto px-6 pb-32">
-        <ClientOnly>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Feature 1 */}
-            <PixelCard variant="blue">
-              <div className="relative p-8">
-                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                  <Code2 className="w-6 h-6 text-white dark:text-black" />
-                </div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
-                </p>
-              </div>
-            </PixelCard>
-
-            {/* Feature 2 */}
-            <PixelCard variant="yellow">
-              <div className="relative p-8">
-                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                  <Coins className="w-6 h-6 text-white dark:text-black" />
-                </div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
-                </p>
-              </div>
-            </PixelCard>
-
-            {/* Feature 3 */}
-            <PixelCard variant="pink">
-              <div className="relative p-8">
-                <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
-                  <Server className="w-6 h-6 text-white dark:text-black" />
-                </div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
-                </p>
-              </div>
-            </PixelCard>
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Feature 1 */}
+          <div>
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+              <Code2 className="w-6 h-6 text-white dark:text-black" />
+            </div>
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">PolyVibe App</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Describe what you want to build in natural language, and watch AI transform your ideas into working dApps. No blockchain expertise required.
+            </p>
           </div>
-        </ClientOnly>
+
+          {/* Feature 2 */}
+          <div>
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+              <Coins className="w-6 h-6 text-white dark:text-black" />
+            </div>
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Token Factory</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Launch your own tokens instantly. Monetize your apps and websites with custom tokens on Polygon.
+            </p>
+          </div>
+
+          {/* Feature 3 */}
+          <div>
+            <div className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center mb-6 rounded-lg">
+              <Server className="w-6 h-6 text-white dark:text-black" />
+            </div>
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">MCP Marketplace</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Buy, sell, and use tokenized MCP servers. Access powerful development tools through our decentralized marketplace.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* What is Vibe Coding */}
@@ -154,35 +146,45 @@ export default function Home() {
       <section className="bg-gray-50/40 dark:bg-gray-900/60 backdrop-blur-lg border-y border-gray-200/30 dark:border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 py-32">
           <h2 className="text-4xl font-bold text-black dark:text-white mb-16">How It Works</h2>
-          <div className="space-y-12">
-            <div className="flex gap-6">
-              <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">01</div>
-              <div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Create</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
-                </p>
-              </div>
+          <ClientOnly>
+            <div className="space-y-8">
+              <PixelCard variant="blue">
+                <div className="flex gap-6 p-8">
+                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">01</div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Create</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Describe your dApp in plain language. Our AI-powered vibe coding interface turns your vision into reality.
+                    </p>
+                  </div>
+                </div>
+              </PixelCard>
+              
+              <PixelCard variant="yellow">
+                <div className="flex gap-6 p-8">
+                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">02</div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Tokenize</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Launch your own token through our factory to monetize and grow your project.
+                    </p>
+                  </div>
+                </div>
+              </PixelCard>
+              
+              <PixelCard variant="pink">
+                <div className="flex gap-6 p-8">
+                  <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">03</div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Scale</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Access MCP servers from our marketplace to supercharge your development capabilities.
+                    </p>
+                  </div>
+                </div>
+              </PixelCard>
             </div>
-            <div className="flex gap-6">
-              <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">02</div>
-              <div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Tokenize</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Launch your own token through our factory to monetize and grow your project.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-6">
-              <div className="text-4xl font-bold text-gray-300 dark:text-gray-700">03</div>
-              <div>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Scale</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Access MCP servers from our marketplace to supercharge your development capabilities.
-                </p>
-              </div>
-            </div>
-          </div>
+          </ClientOnly>
         </div>
       </section>
 
