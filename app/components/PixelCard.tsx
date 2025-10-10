@@ -129,8 +129,8 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   const canvasRef = useRef(null)
   const pixelsRef = useRef([])
   const animationRef = useRef(null)
-  const timePreviousRef = useRef(performance.now())
-  const reducedMotion = useRef(window.matchMedia('(prefers-reduced-motion: reduce)').matches).current
+  const timePreviousRef = useRef(null)
+  const reducedMotion = useRef(false)
 
   const variantCfg = VARIANTS[variant] || VARIANTS.default
   const finalGap = gap ?? variantCfg.gap
@@ -171,6 +171,9 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   const doAnimate = fnName => {
     animationRef.current = requestAnimationFrame(() => doAnimate(fnName))
     const timeNow = performance.now()
+    if (!timePreviousRef.current) {
+      timePreviousRef.current = timeNow
+    }
     const timePassed = timeNow - timePreviousRef.current
     const timeInterval = 1000 / 60
 
@@ -212,6 +215,12 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   }
 
   useEffect(() => {
+    // Initialize refs on client-side only
+    if (typeof window !== 'undefined') {
+      reducedMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      timePreviousRef.current = performance.now()
+    }
+    
     initPixels()
     const observer = new ResizeObserver(() => {
       initPixels()
