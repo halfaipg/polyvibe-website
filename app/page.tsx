@@ -14,11 +14,23 @@ const Orb = dynamic(() => import('./components/Orb'), { ssr: false })
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-        {/* Background Orb - Light Mode */}
-        <div className="fixed inset-0 opacity-30 pointer-events-none dark:hidden flex items-center justify-center">
+        {/* Background Orb - Light Mode (Left) */}
+        <div className="fixed top-1/2 -translate-y-1/2 -left-1/2 opacity-30 pointer-events-none dark:hidden">
           <div className="w-[2000px] h-[2000px]">
             <Orb
               hue={0}
+              hoverIntensity={0.5}
+              rotateOnHover={true}
+              forceHoverState={false}
+            />
+          </div>
+        </div>
+        
+        {/* Background Orb - Light Mode (Right) */}
+        <div className="fixed top-1/2 -translate-y-1/2 -right-1/2 opacity-30 pointer-events-none dark:hidden">
+          <div className="w-[2000px] h-[2000px]">
+            <Orb
+              hue={180}
               hoverIntensity={0.5}
               rotateOnHover={true}
               forceHoverState={false}
