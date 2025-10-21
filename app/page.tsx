@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 
 const Beams = dynamic(() => import('./components/Beams'), { ssr: false })
 const PixelCard = dynamic(() => import('./components/PixelCard'), { ssr: false })
-const Prism = dynamic(() => import('./components/Prism'), { ssr: false })
+const Dither = dynamic(() => import('./components/Dither'), { ssr: false })
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false)
@@ -49,36 +49,57 @@ export default function Home() {
   }
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 relative overflow-hidden">
-        {/* Background Prism - Light Mode Only */}
+        {/* Dither Wave Background - Light Mode Only */}
         {!isDark && reactBitsEnabled && (
           <div className="fixed inset-0 opacity-30 pointer-events-none">
-            <Prism
-              animationType="rotate"
-              timeScale={0.5}
-              height={3.5}
-              baseWidth={5.5}
-              scale={3.6}
-              hueShift={0}
-              colorFrequency={1}
-              noise={0.5}
-              glow={1}
+            <Dither
+              waveColor={[0.5, 0.2, 0.8]}
+              disableAnimation={false}
+              enableMouseInteraction={true}
+              mouseRadius={0.5}
+              colorNum={4}
+              waveAmplitude={0.5}
+              waveFrequency={2}
+              waveSpeed={0.02}
+              baseColor={1.0}
             />
+            {/* Polygon Logo in Center */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/polygon-matic-logo.svg"
+                alt="Polygon"
+                width={200}
+                height={200}
+                className="opacity-70"
+              />
+            </div>
           </div>
         )}
         
-        {/* Background Beams - Dark Mode (White/Grey) */}
-        {isDark && (
+        {/* Dither Wave Background - Dark Mode */}
+        {isDark && reactBitsEnabled && (
           <div className="fixed inset-0 opacity-30 pointer-events-none">
-            <Beams
-              beamWidth={1.5}
-              beamHeight={15}
-              beamNumber={24}
-              lightColor="#ffffff"
-              speed={1.5}
-              noiseIntensity={1.5}
-              scale={0.25}
-              rotation={25}
+            <Dither
+              waveColor={[0.3, 0.1, 0.5]}
+              disableAnimation={false}
+              enableMouseInteraction={true}
+              mouseRadius={0.5}
+              colorNum={4}
+              waveAmplitude={0.5}
+              waveFrequency={2}
+              waveSpeed={0.02}
+              baseColor={0.0}
             />
+            {/* Polygon Logo in Center */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/polygon-matic-logo.svg"
+                alt="Polygon"
+                width={200}
+                height={200}
+                className="opacity-70"
+              />
+            </div>
           </div>
         )}
 
@@ -114,7 +135,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-32">
+      <section className="max-w-6xl mx-auto px-6 pt-24 pb-16">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
             Build dApps<br />Like a Pro
@@ -126,6 +147,46 @@ export default function Home() {
           <button className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg">
             Start Building
           </button>
+        </div>
+      </section>
+
+      {/* AI Prompt Section */}
+      <section className="max-w-4xl mx-auto px-6 pb-32">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
+            What do you want to build?
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            Describe your idea and let AI bring it to life
+          </p>
+        </div>
+        
+        <div className="relative">
+          <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-2xl">
+            <div className="space-y-4">
+              <div className="text-center mb-4">
+                <button className="inline-flex items-center gap-3 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl transition-colors font-medium text-lg shadow-lg">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Talk to PolyVibe AI Agent
+                </button>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Or type your idea below</p>
+              </div>
+              
+              <textarea
+                placeholder="I want to create a landing page for my web3 startup that showcases our DeFi protocol with a modern design, tokenomics section, and community features..."
+                className="w-full bg-transparent text-lg text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 border-none outline-none resize-none min-h-[80px] leading-relaxed"
+                rows={3}
+              />
+              
+              <div className="flex items-center justify-center pt-2">
+                <button className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium text-lg">
+                  Build It
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
